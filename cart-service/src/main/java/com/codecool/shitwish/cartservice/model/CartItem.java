@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class CartItem {
-    private String name;
-    private Integer presentId;
+    private String title;
+    private Integer id;
     private Integer count;
     private Integer basePrice;
     private Integer sumPrice;
@@ -14,9 +14,9 @@ public class CartItem {
         this.sumPrice = count * basePrice;
     }
 
-    public CartItem(String name, Integer presentId, Integer basePrice, Integer sumPrice) {
-        this.name = name;
-        this.presentId = presentId;
+    public CartItem(String title, Integer id, Integer basePrice, Integer sumPrice) {
+        this.title = title;
+        this.id = id;
         this.count = 1;
         this.basePrice = basePrice;
         this.sumPrice = basePrice;
