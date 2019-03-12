@@ -23,6 +23,10 @@ public class PresentStorage {
         return presentRepository.findById(id).orElse(null);
     }
 
+    public void add(Present present) {
+        presentRepository.save(present);
+    }
+
 
 
 }

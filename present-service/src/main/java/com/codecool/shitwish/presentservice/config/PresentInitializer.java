@@ -75,7 +75,18 @@ public class PresentInitializer {
                     .price(30)
                     .image(new URL("http://www.tolkienshop.com/contents/media/l_one_ring_gold_italian.jpg"))
                     .build();
+
+            presentStorage.add(tennisBall);
+            presentStorage.add(brick);
+            presentStorage.add(passport);
+            presentStorage.add(szalami);
+            presentStorage.add(screwdrier);
+            presentStorage.add(bmw);
+            presentStorage.add(kidney);
+            presentStorage.add(ring);
         };
+
+
     }
 
 
