@@ -32,19 +32,21 @@ public class CartController {
         return getCart();
     }
 
-    @PostMapping("/cart/")
+    @PostMapping("/cart/add")
     public String addToCart(@RequestBody CartItem cartItem) throws IOException {
+        getCart().addToCart(cartItem);
         return "Success.";
     }
 
-    @PostMapping("/cart/")
+    @PostMapping("/cart/sub")
     public String subtractFromCart(@RequestBody CartItem cartItem) throws IOException {
-
+        getCart().subtractFromCart(cartItem);
         return "Success.";
     }
 
-    @PostMapping(value="/cart/")
-    public String deleteFromCartById(@RequestBody CartItem cartItem) throws IOException {
-            return "Success.";
+    @PostMapping(value="/cart/delete")
+    public String deleteFromCart(@RequestBody CartItem cartItem) throws IOException {
+        getCart().removeFromCart(cartItem);
+        return "Success.";
     }
 }
