@@ -1,11 +1,11 @@
 package com.codecool.shitwish.cartservice.controller;
 
 import com.codecool.shitwish.cartservice.model.Cart;
+import com.codecool.shitwish.cartservice.model.CartItem;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
 
 @RestController
 @CrossOrigin
@@ -17,7 +17,6 @@ public class CartController {
         this.session = session;
     }
 
-    @GetMapping(value="/cart")
     public Cart getCart() {
         Cart cart;
         if (session.getAttribute("cart") == null) {
@@ -28,13 +27,24 @@ public class CartController {
         return cart;
     }
 
-    @PostMapping("/cart/{id}")
-    public String addToCartById(@PathVariable("id") Integer id) throws IOException {
+    @GetMapping(value="/cart")
+    public Cart reviewCart() {
+        return getCart();
+    }
+
+    @PostMapping("/cart/")
+    public String addToCart(@RequestBody CartItem cartItem) throws IOException {
         return "Success.";
     }
 
-    @DeleteMapping(value="/cart/{id}")
-    public String deleteFromCartById(@PathVariable("id") Integer id) throws IOException {
+    @PostMapping("/cart/")
+    public String subtractFromCart(@RequestBody CartItem cartItem) throws IOException {
+
+        return "Success.";
+    }
+
+    @PostMapping(value="/cart/")
+    public String deleteFromCartById(@RequestBody CartItem cartItem) throws IOException {
             return "Success.";
     }
 }
