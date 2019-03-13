@@ -33,6 +33,11 @@ public class ShitwishController {
         return serviceCaller.getCart();
     }
 
+    @GetMapping("/cart/size")
+    public Integer getCartSize(){
+        return serviceCaller.getCartSize();
+    }
+
     @PostMapping("/cart")
     public String addToCart(@RequestBody Present present) {
         serviceCaller.addToCart(present);

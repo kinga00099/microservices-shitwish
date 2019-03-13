@@ -48,6 +48,11 @@ public class ServiceCaller {
     }
 
     @RequestMapping
+    public Integer getCartSize() {
+        return restTemplate.getForEntity(cartUrl + "/cart/size", Integer.class).getBody();
+    }
+
+    @RequestMapping
     public String addToCart(Present present) {
         HttpEntity<Present> request = new HttpEntity<>(present);
         ResponseEntity<String> response = restTemplate
