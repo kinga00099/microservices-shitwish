@@ -11,19 +11,23 @@ import java.io.IOException;
 @RestController
 @CrossOrigin
 @RequestMapping(value={"/api", "/"})
+@SessionAttributes("cart")
 public class CartController {
     private HttpSession session;
+    private Cart cart;
 
     public CartController(HttpSession session) {
         this.session = session;
+        this.cart = new Cart();
     }
 
     public Cart getCart() {
-        Cart cart;
+        System.out.println(session.getAttribute("cart"));
         if (session.getAttribute("cart") == null) {
-            cart = new Cart();
+            //cart = new Cart();
             session.setAttribute("cart", cart);
         }
+        System.out.println(session.getAttribute("cart"));
         cart = (Cart) session.getAttribute("cart");
         return cart;
     }
@@ -39,7 +43,8 @@ public class CartController {
 
     @PostMapping("/cart")
     public String addToCart(@RequestBody Present present) throws IOException {
-        getCart().addToCart(convertPresent(present));
+        cart.addToCart(convertPresent(present));
+        System.out.println("cart:"+cart);
         return "Success.";
     }
 
