@@ -68,6 +68,13 @@ public class ServiceCaller {
     }
 
     @RequestMapping
+    public String incrementToCart(Integer id){
+        ResponseEntity<String> response = restTemplate
+                .exchange(cartUrl + "/cart/" + id, HttpMethod.POST, null, String.class);
+        return response.getBody();
+    }
+
+    @RequestMapping
     public String deleteFromCart(Integer id){
         ResponseEntity<String> response = restTemplate
                 .exchange(cartUrl + "/cart/" + id, HttpMethod.DELETE, null, String.class);

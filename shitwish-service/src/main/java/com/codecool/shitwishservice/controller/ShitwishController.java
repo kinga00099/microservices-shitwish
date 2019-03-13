@@ -50,6 +50,12 @@ public class ShitwishController {
         return "Success.";
     }
 
+    @PostMapping("/cart/{id}")
+    public String incrementToCart(@PathVariable Integer id) {
+        serviceCaller.incrementToCart(id);
+        return "Success.";
+    }
+
     @DeleteMapping("/cart/{id}")
     public String deleteFromCart(@PathVariable Integer id) {
         serviceCaller.deleteFromCart(id);
