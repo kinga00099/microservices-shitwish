@@ -1,9 +1,14 @@
 package com.codecool.shitwish.cartservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.net.URL;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CartItem {
     private String title;
     private Integer id;
