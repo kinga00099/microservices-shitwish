@@ -1,5 +1,6 @@
 package com.codecool.shitwishservice.controller;
 
+import com.codecool.shitwish.cartservice.model.*;
 import com.codecool.shitwish.presentservice.model.Present;
 import com.codecool.shitwishservice.service.ServiceCaller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,10 @@ public class ShitwishController {
     @GetMapping("/present/{id}")
     public Present getAll(@PathVariable Integer id){
         return serviceCaller.getPresentById(id);
+    }
+
+    @GetMapping("/cart")
+    public Cart getCart(){
+        return serviceCaller.getCart();
     }
 }

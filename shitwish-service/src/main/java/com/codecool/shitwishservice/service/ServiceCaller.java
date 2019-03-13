@@ -1,5 +1,6 @@
 package com.codecool.shitwishservice.service;
 
+import com.codecool.shitwish.cartservice.model.Cart;
 import com.codecool.shitwish.presentservice.model.Present;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,9 @@ public class ServiceCaller {
     @Value("${presentservice.url}")
     private String presentUrl;
 
+    @Value("${cartservice.url}")
+    private String cartUrl;
+
     @RequestMapping
     public List<Present> getPresents() {
         ResponseEntity<List<Present>> response = restTemplate.exchange(
@@ -34,5 +38,10 @@ public class ServiceCaller {
     @RequestMapping
     public Present getPresentById(Integer id){
         return restTemplate.getForEntity(presentUrl + "/getBy/" + id, Present.class).getBody();
+    }
+
+    @RequestMapping
+    public Cart getCart() {
+        return restTemplate.getForEntity(cartUrl + "/cart/", Cart.class).getBody();
     }
 }
