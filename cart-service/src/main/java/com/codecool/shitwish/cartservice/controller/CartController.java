@@ -41,6 +41,11 @@ public class CartController {
         return getCart();
     }
 
+    @GetMapping(value="/cart/size")
+    public Integer getCartSize() {
+        return getCart().getItemCount();
+    }
+
     @PostMapping("/cart")
     public String addToCart(@RequestBody Present present) throws IOException {
         cart.addToCart(convertPresent(present));
