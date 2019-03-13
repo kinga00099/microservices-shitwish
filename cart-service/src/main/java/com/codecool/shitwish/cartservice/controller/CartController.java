@@ -37,7 +37,7 @@ public class CartController {
         return getCart();
     }
 
-    @PostMapping("/cart/")
+    @PostMapping("/cart")
     public String addToCart(@RequestBody Present present) throws IOException {
         getCart().addToCart(convertPresent(present));
         return "Success.";
