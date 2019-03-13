@@ -14,7 +14,7 @@ public class CartItem {
         this.sumPrice = count * basePrice;
     }
 
-    public CartItem(String title, Integer id, Integer basePrice, Integer sumPrice) {
+    public CartItem(String title, Integer id, Integer basePrice) {
         this.title = title;
         this.id = id;
         this.count = 1;

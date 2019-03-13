@@ -53,5 +53,13 @@ public class Cart {
         this.itemCount = tempCount;
     }
 
+    public CartItem findById(Integer presentId) {
+        for (CartItem cartItem : cartItems) {
+            if (cartItem.getId().equals(presentId)) {
+                return cartItem;
+            }
+        }
+        return  null;
+    }
 }
 

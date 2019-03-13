@@ -1,6 +1,7 @@
 package com.codecool.shitwish.cartservice.controller;
 
 import com.codecool.shitwish.cartservice.model.Cart;
+import com.codecool.shitwish.presentservice.model.Present;
 import com.codecool.shitwish.cartservice.model.CartItem;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,26 +28,30 @@ public class CartController {
         return cart;
     }
 
+    public CartItem convertPresent(Present present) {
+        return new CartItem(present.getTitle(), present.getId(), present.getPrice());
+    }
+
     @GetMapping(value="/cart")
     public Cart reviewCart() {
         return getCart();
     }
 
     @PostMapping("/cart/add")
-    public String addToCart(@RequestBody CartItem cartItem) throws IOException {
-        getCart().addToCart(cartItem);
+    public String addToCart(@RequestBody Present present) throws IOException {
+        getCart().addToCart(convertPresent(present));
         return "Success.";
     }
 
-    @PostMapping("/cart/sub")
-    public String subtractFromCart(@RequestBody CartItem cartItem) throws IOException {
-        getCart().subtractFromCart(cartItem);
+    @PutMapping("/cart/{id}")
+    public String subtractFromCart(@PathVariable Integer id) throws IOException {
+        getCart().subtractFromCart(getCart().findById(id));
         return "Success.";
     }
 
-    @PostMapping(value="/cart/delete")
-    public String deleteFromCart(@RequestBody CartItem cartItem) throws IOException {
-        getCart().removeFromCart(cartItem);
+    @PostMapping(value="/cart/{id}")
+    public String deleteFromCart(@PathVariable Integer id) throws IOException {
+        getCart().removeFromCart(getCart().findById(id));
         return "Success.";
     }
 }
