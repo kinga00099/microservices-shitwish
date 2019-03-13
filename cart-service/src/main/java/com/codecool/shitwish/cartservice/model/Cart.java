@@ -12,8 +12,8 @@ public class Cart {
     private Integer sumPrice;
 
     public void addToCart(CartItem cartItem) {
-        if (this.cartItems.contains(cartItem)) {
-            cartItems.get(cartItems.indexOf(cartItem)).countIncrease();
+        if (findById(cartItem.getId()) != null) {
+            findById(cartItem.getId()).countIncrease();
         } else {
             cartItems.add(cartItem);
         }
