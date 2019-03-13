@@ -5,6 +5,7 @@ import com.codecool.shitwish.presentservice.model.Present;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -43,5 +44,27 @@ public class ServiceCaller {
     @RequestMapping
     public Cart getCart() {
         return restTemplate.getForEntity(cartUrl + "/cart/", Cart.class).getBody();
+    }
+
+    @RequestMapping
+    public String addToCart(Present present) {
+        HttpEntity<Present> request = new HttpEntity<>(present);
+        ResponseEntity<String> response = restTemplate
+                .exchange(cartUrl + "/cart/", HttpMethod.POST, request, String.class);
+        return response.getBody();
+    }
+
+    @RequestMapping
+    public String subtractFromCart(Integer id){
+        ResponseEntity<String> response = restTemplate
+                .exchange(cartUrl + "/cart/" + id, HttpMethod.PUT, null, String.class);
+        return response.getBody();
+    }
+
+    @RequestMapping
+    public String deleteFromCart(Integer id){
+        ResponseEntity<String> response = restTemplate
+                .exchange(cartUrl + "/cart/" + id, HttpMethod.DELETE, null, String.class);
+        return response.getBody();
     }
 }
