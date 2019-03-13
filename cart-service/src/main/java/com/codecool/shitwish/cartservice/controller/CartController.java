@@ -53,6 +53,16 @@ public class CartController {
         return "Success.";
     }
 
+    @PostMapping("/cart/{id}")
+    public String incrementToCart(@PathVariable Integer id) throws IOException {
+        if (getCart().findById(id) != null) {
+            getCart().addToCart(getCart().findById(id));
+            return "Success.";
+        } else {
+            return "Item not found in cart.";
+        }
+    }
+
     @PutMapping("/cart/{id}")
     public String subtractFromCart(@PathVariable Integer id) throws IOException {
         getCart().subtractFromCart(getCart().findById(id));
