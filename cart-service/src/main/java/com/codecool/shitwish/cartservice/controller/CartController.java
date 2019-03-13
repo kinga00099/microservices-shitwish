@@ -37,7 +37,7 @@ public class CartController {
         return getCart();
     }
 
-    @PostMapping("/cart/add")
+    @PostMapping("/cart/")
     public String addToCart(@RequestBody Present present) throws IOException {
         getCart().addToCart(convertPresent(present));
         return "Success.";
@@ -49,7 +49,7 @@ public class CartController {
         return "Success.";
     }
 
-    @PostMapping(value="/cart/{id}")
+    @DeleteMapping(value="/cart/{id}")
     public String deleteFromCart(@PathVariable Integer id) throws IOException {
         getCart().removeFromCart(getCart().findById(id));
         return "Success.";
