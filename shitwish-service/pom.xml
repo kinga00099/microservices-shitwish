@@ -66,6 +66,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.codecool.shitwish</groupId>
+            <artifactId>cart-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.4.0</version>
