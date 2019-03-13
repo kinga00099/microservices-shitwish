@@ -24,14 +24,14 @@ public class PresentInitializer {
                     .title("Tennis ball")
                     .description("Barely used tennis ball for sale")
                     .price(10)
-                    .image(new URL("https://5.imimg.com/data5/WQ/LY/MY-44813490/tennis-ball-500x500.jpg"))
+                    .image(new URL("https://www.shbarcelona.es/blog/es/wp-content/uploads/2016/07/padel-singles-barcelona.jpg"))
                     .build();
 
             Present brick = Present.builder()
                     .title("Brick")
                     .description("As the title says. It's a brick for sale...")
                     .price(1)
-                    .image(new URL("https://2ecffd01e1ab3e9383f0-07db7b9624bbdf022e3b5395236d5cf8.ssl.cf4.rackcdn.com/Product-800x800/94fe8692-b10a-4d47-9e40-e3e2361c703a.png"))
+                    .image(new URL("https://regmedia.co.uk/2015/10/09/adobe_54634545.jpg?x=442&y=293&crop=1"))
                     .build();
 
             Present passport = Present.builder()
@@ -52,14 +52,14 @@ public class PresentInitializer {
                     .title("Screwdriver")
                     .description("Shitty screwdriver for sale")
                     .price(2)
-                    .image(new URL("https://www.harborfreight.com/media/catalog/product/i/m/image_7873.jpg"))
+                    .image(new URL("https://www.workshopheaven.com/media/catalog/product/cache/1/image/1080x720/9df78eab33525d08d6e5fb8d27136e95/N/a/Narex-8094-Philips-Screwdriver-Set_9.jpg"))
                     .build();
 
             Present bmw = Present.builder()
                     .title("Bmw 850i")
                     .description("Shitty BMW 850i for sale. I asked for a Mercedes. Duh...")
                     .price(110000)
-                    .image(new URL("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4616b562293441.5a8bd9bb93002.jpg"))
+                    .image(new URL("https://periodismodelmotor.com/wp-content/uploads/2018/07/BMW-Serie-8-2019-1.jpg"))
                     .build();
 
             Present kidney = Present.builder()
@@ -73,7 +73,35 @@ public class PresentInitializer {
                     .title("Golden Ring")
                     .description("Selling my ring. Found it in the bottom of the local lake. Strange writings on it when it gets heat...")
                     .price(30)
-                    .image(new URL("http://www.tolkienshop.com/contents/media/l_one_ring_gold_italian.jpg"))
+                    .image(new URL("https://i.redd.it/15gpm2btqz811.jpg"))
+                    .build();
+
+            Present watch = Present.builder()
+                    .title("Rolex watch")
+                    .description("Rolex is for poor people")
+                    .price(4000)
+                    .image(new URL("https://www.rolex.com/content/dam/rolex-58/homepage/roller-collection/classic-watches/homepage_classic_watches_sky-dweller_0001_700x550.jpg"))
+                    .build();
+
+            Present plane = Present.builder()
+                    .title("Private jet")
+                    .description("Want something bigger...")
+                    .price(30000)
+                    .image(new URL("https://sherpareport.com/images/hire-jet-plane.jpg"))
+                    .build();
+
+            Present mom = Present.builder()
+                    .title("Mom")
+                    .description("I'd sell my mom")
+                    .price(1)
+                    .image(new URL("https://www.thelocal.it/userdata/galleries/4091/eating.jpg"))
+                    .build();
+
+            Present train = Present.builder()
+                    .title("V 43 villanymozdony")
+                    .description("V 43 for sale. Straight from MÁV garage. Delivery not possible")
+                    .price(3000)
+                    .image(new URL("https://upload.wikimedia.org/wikipedia/commons/b/b0/MAV_V43-1103_02.JPG"))
                     .build();
 
             presentStorage.add(tennisBall);
@@ -84,6 +112,10 @@ public class PresentInitializer {
             presentStorage.add(bmw);
             presentStorage.add(kidney);
             presentStorage.add(ring);
+            presentStorage.add(watch);
+            presentStorage.add(plane);
+            presentStorage.add(mom);
+            presentStorage.add(train);
         };
 
 
