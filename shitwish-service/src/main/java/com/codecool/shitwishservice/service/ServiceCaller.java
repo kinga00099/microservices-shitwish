@@ -1,6 +1,7 @@
 package com.codecool.shitwishservice.service;
 
 import com.codecool.shitwish.cartservice.model.Cart;
+import com.codecool.shitwish.cartservice.model.CartItem;
 import com.codecool.shitwish.presentservice.model.Present;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
