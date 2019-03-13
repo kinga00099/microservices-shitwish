@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +31,23 @@ public class ShitwishController {
     @GetMapping("/cart")
     public Cart getCart(){
         return serviceCaller.getCart();
+    }
+
+    @PostMapping("/cart")
+    public String addToCart(@RequestBody Present present) {
+        serviceCaller.addToCart(present);
+        return "Success.";
+    }
+
+    @PutMapping("/cart/{id}")
+    public String subtractFromCart(@PathVariable Integer id) {
+        serviceCaller.subtractFromCart(id);
+        return "Success.";
+    }
+
+    @DeleteMapping("/cart/{id}")
+    public String deleteFromCart(@PathVariable Integer id) {
+        serviceCaller.deleteFromCart(id);
+        return "Success.";
     }
 }
