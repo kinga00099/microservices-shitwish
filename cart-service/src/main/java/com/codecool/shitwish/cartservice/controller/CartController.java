@@ -29,7 +29,7 @@ public class CartController {
     }
 
     public CartItem convertPresent(Present present) {
-        return new CartItem(present.getTitle(), present.getId(), present.getPrice());
+        return new CartItem(present.getTitle(), present.getId(), present.getImage(), present.getPrice());
     }
 
     @GetMapping(value="/cart")
